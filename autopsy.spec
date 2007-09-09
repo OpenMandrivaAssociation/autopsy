@@ -4,7 +4,7 @@
 Summary:	Autopsy Forensic Browser
 Name:		autopsy
 Version:	2.06
-Release:	%mkrel 3
+Release:	%mkrel 4
 License:	GPL
 Group:		System/Base
 URL:		http://www.sleuthkit.org
@@ -112,5 +112,3 @@ install -m0644 pict/* %{buildroot}%{_datadir}/autopsy/pict/
 %dir /var/log/autopsy
 %dir %{_localstatedir}/morgue
 %attr(0644,root,root) %{_mandir}/man1/*
-
-
