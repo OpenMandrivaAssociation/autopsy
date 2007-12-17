@@ -15,7 +15,6 @@ Requires:	grep
 Requires:	perl
 Requires:	sleuthkit >= 1.61
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 The Autopsy Forensic Browser is a graphical interface to the command line
