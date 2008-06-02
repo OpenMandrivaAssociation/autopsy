@@ -76,7 +76,7 @@ cat > conf.pl << EOF
 # Directories
 \$TSKDIR = '%{_bindir}/';
 \$NSRLDB = '';
-\$LOCKDIR = '%{_localstatedir}/morgue';
+\$LOCKDIR = '%{_localstatedir}/lib/morgue';
 EOF
 
 %install
@@ -85,7 +85,7 @@ EOF
 install -d %{buildroot}%{_sbindir}
 install -d %{buildroot}%{_mandir}/man1
 install -d %{buildroot}/var/log/autopsy
-install -d %{buildroot}%{_localstatedir}/morgue
+install -d %{buildroot}%{_localstatedir}/lib/morgue
 install -d %{buildroot}%{_datadir}/autopsy/help
 install -d %{buildroot}%{_datadir}/autopsy/lib
 install -d %{buildroot}%{_datadir}/autopsy/pict
@@ -110,5 +110,5 @@ install -m0644 pict/* %{buildroot}%{_datadir}/autopsy/pict/
 %attr(0755,root,root) %{_sbindir}/autopsy
 %attr(0755,root,root) %{_sbindir}/make-live-cd
 %dir /var/log/autopsy
-%dir %{_localstatedir}/morgue
+%dir %{_localstatedir}/lib/morgue
 %attr(0644,root,root) %{_mandir}/man1/*
