@@ -4,7 +4,7 @@
 Summary:	Autopsy Forensic Browser
 Name:		autopsy
 Version:	2.10
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPL
 Group:		System/Base
 URL:		http://www.sleuthkit.org
