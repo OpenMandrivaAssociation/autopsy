@@ -3,9 +3,9 @@
 
 Summary:	Autopsy Forensic Browser
 Name:		autopsy
-Version:	2.10
-Release:	%mkrel 2
-License:	GPL
+Version:	2.21
+Release:	%mkrel 1
+License:	GPLv2+
 Group:		System/Base
 URL:		http://www.sleuthkit.org
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/autopsy/%name-%version.tar.gz
