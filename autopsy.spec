@@ -4,7 +4,7 @@
 Summary:	Autopsy Forensic Browser
 Name:		autopsy
 Version:	2.21
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		System/Base
 URL:		http://www.sleuthkit.org
@@ -72,6 +72,8 @@ cat > conf.pl << EOF
 \$STRINGS_EXE = '%{_bindir}/strings';
 \$GREP_EXE = '/bin/grep';
 \$FILE_EXE = '%{_bindir}/file';
+\$MD5_EXE = '%{_bindir}/md5sum';
+\$SHA1_EXE = '%{_bindir}/sha1sum';
 
 # Directories
 \$TSKDIR = '%{_bindir}/';
