@@ -1,10 +1,11 @@
-%define _provides_exceptions perl(Appsort)\\|perl(Appview)\\|perl(Args)\\|perl(Caseman)\\|perl(Data)\\|perl(Exec)\\|perl(File)\\|perl(Filesystem)\\|perl(Frame)\\|perl(Fs)\\|perl(Hash)\\|perl(Kwsrch)\\|perl(Main)\\|perl(Meta)\\|perl(Notes)\\|perl(Print)\\|perl(Timeline)\\|perl(autopsyfunc)\\|perl(conf.pl)\\|perl(define.pl)\\|perl(fs.pl)\\|perl(search.pl)
-%define _requires_exceptions perl(Appsort)\\|perl(Appview)\\|perl(Args)\\|perl(Caseman)\\|perl(Data)\\|perl(Exec)\\|perl(File)\\|perl(Filesystem)\\|perl(Frame)\\|perl(Fs)\\|perl(Hash)\\|perl(Kwsrch)\\|perl(Main)\\|perl(Meta)\\|perl(Notes)\\|perl(Print)\\|perl(Timeline)\\|perl(autopsyfunc)\\|perl(conf.pl)\\|perl(define.pl)\\|perl(fs.pl)\\|perl(search.pl)
+%define __noautoprov 'perl\\(Appsort\\)|perl\\(Appview\\)|perl\\(Args\\)|perl\\(Caseman\\)|perl\\(Data\\)|perl\\(Exec\\)|perl\\(File\\)|perl\\(Filesystem\\)|perl\\(Frame\\)|perl\\(Fs\\)|perl\\(Hash\\)|perl\\(Kwsrch\\)|perl\\(Main\\)|perl\\(Meta\\)|perl\\(Notes\\)|perl\\(Print\\)|perl\\(Timeline\\)|perl\\(autopsyfunc\\)|perl\\(conf.pl\\)|perl\\(define.pl\\)|perl\\(fs.pl\\)|perl\\(search.pl\\)'
+%define __noautoreq 'perl\\(Appsort\\)|perl\\(Appview\\)|perl\\(Args\\)|perl\\(Caseman\\)|perl\\(Data\\)|perl\\(Exec\\)|perl\\(File\\)|perl\\(Filesystem\\)|perl\\(Frame\\)|perl\\(Fs\\)|perl\\(Hash\\)|perl\\(Kwsrch\\)|perl\\(Main\\)|perl\\(Meta\\)|perl\\(Notes\\)|perl\\(Print\\)|perl\\(Timeline\\)|perl\\(autopsyfunc\\)|perl\\(conf.pl\\)|perl\\(define.pl\\)|perl\\(fs.pl\\)|perl\\(search.pl\\)'
+
 
 Summary:	Autopsy Forensic Browser
 Name:		autopsy
 Version:	2.24
-Release:	%mkrel 1
+Release:	2
 License:	GPLv2+
 Group:		System/Base
 URL:		http://www.sleuthkit.org
@@ -15,7 +16,6 @@ Requires:	grep
 Requires:	perl
 Requires:	sleuthkit >= 1.61
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 The Autopsy Forensic Browser is a graphical interface to the command line
@@ -82,8 +82,6 @@ cat > conf.pl << EOF
 EOF
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 install -d %{buildroot}%{_sbindir}
 install -d %{buildroot}%{_mandir}/man1
 install -d %{buildroot}/var/log/autopsy
@@ -100,14 +98,8 @@ install -m0644 lib/*.p* %{buildroot}%{_datadir}/autopsy/lib/
 install -m0644 man/man1/autopsy.1 %{buildroot}%{_mandir}/man1/
 install -m0644 pict/* %{buildroot}%{_datadir}/autopsy/pict/
 
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc CHANGES.txt COPYING docs/*.txt INSTALL.txt README-LIVE.txt README.txt TODO.txt
-%config(noreplace) %attr(0644,root,root) %{_datadir}/autopsy/conf.pl
-%config(noreplace) %attr(0644,root,root) %{_datadir}/autopsy/lib/define.pl
 %{_datadir}/autopsy
 %attr(0755,root,root) %{_sbindir}/autopsy
 %attr(0755,root,root) %{_sbindir}/make-live-cd
