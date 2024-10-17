@@ -8,7 +8,7 @@ Version:	2.24
 Release:	3
 License:	GPLv2+
 Group:		System/Base
-URL:		http://www.sleuthkit.org
+URL:		https://www.sleuthkit.org
 Source0:	http://dfn.dl.sourceforge.net/sourceforge/autopsy/%name-%version.tar.gz
 Requires:	binutils
 Requires:	file
